@@ -4,6 +4,7 @@ please run below command to install dependencies
 format for excel file is
 
 username	email	status
+
 Aditya	aditya@yopmail.com	1
 
 
