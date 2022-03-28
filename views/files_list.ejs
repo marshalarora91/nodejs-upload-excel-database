@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+  <%- include('includes/navigation.ejs') %>
+<h2>File Listing</h2>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>File Name</th>
+    <th>Created Date</th>
+    <th>Action</th>
+  </tr>
+
+    <% for (let file of files) { %>
+    
+        <tr>
+            <td><%= file._id %></td>
+            <td><%= file.name %></td>
+            <td><%= file.createdAt %></td>
+            <td><a href="/file/delete/<%= file._id %>">Delete</a></td>
+        </tr>
+
+    <% } %>
+
+</table>
+
+</body>
+</html>
+

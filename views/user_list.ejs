@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+
+  <%- include('includes/navigation.ejs') %>
+
+
+<h2>Users Listing</h2>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>username</th>
+    <th>email</th>
+    <th>status</th>
+    <th>last Access Date Time</th>
+    <th>File</th>
+    <!-- <th>Action</th> -->
+  </tr>
+
+    <% for (let user of users) { %>
+    
+        <tr>
+            <td><%= user._id %></td>
+            <td><%= user.username %></td>
+            <td><%= user.email %></td>
+            <td><%= user.status %></td>
+            <td><%= user.createdAt %></td>
+            <td><%= user.fileId.name %></td>
+            <!-- <td><a href="/user/delete/<%= user._id %>">Delete</a></td> -->
+        </tr>
+
+    <% } %>
+
+</table>
+
+</body>
+</html>
+
